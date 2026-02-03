@@ -60,6 +60,9 @@ public class BookServiceImpl implements BookService {
         if (request.getRating() != null) {
             book.setRating(request.getRating());
         }
+        if (request.getStock() != null) {
+            book.setStock(request.getStock());
+        }
 
 
         return repository.save(book);

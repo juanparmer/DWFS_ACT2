@@ -65,6 +65,7 @@ public class BookRepository {
             case "rating":
             case "id":
             case "publicationdate":
+            case "stock":
             case "publication_date":
                 return SearchOperation.EQUAL;
             default:
@@ -81,6 +82,8 @@ public class BookRepository {
                     return Double.parseDouble(value);
                 case "id":
                     return Long.parseLong(value);
+                case "stock":
+                    return Double.parseDouble(value);
                 default:
                     return value;
             }

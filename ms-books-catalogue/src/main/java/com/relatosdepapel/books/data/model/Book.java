@@ -58,6 +58,7 @@ public class Book {
         this.category = dto.getCategory();
         this.isbn = dto.getIsbn();
         this.rating = dto.getRating();
+        this.stock = dto.getStock();
         this.visible = dto.getVisible();
     }
 
@@ -79,6 +80,9 @@ public class Book {
         }
         if (dto.getRating() != null) {
             this.rating = dto.getRating();
+        }
+        if (dto.getStock() != null) {
+            this.stock = dto.getStock();
         }
         if (dto.getVisible() != null) {
             this.visible = dto.getVisible();

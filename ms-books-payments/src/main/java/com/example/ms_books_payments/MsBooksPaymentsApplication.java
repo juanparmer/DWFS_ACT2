@@ -14,7 +14,7 @@ public class MsBooksPaymentsApplication {
     }
 
     @Bean
-    @LoadBalanced // Obligatorio para usar el nombre del microservicio buscador
+    // @LoadBalanced <-- Eureka
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }

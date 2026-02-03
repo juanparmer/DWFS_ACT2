@@ -18,19 +18,20 @@ public class PaymentsController {
 
     @PostMapping("/payments")
     public ResponseEntity<Purchase> registerPurchase(@RequestBody Long bookId) {
-        // Criterio 5: Llamada al buscador por NOMBRE del servicio
-        String url = "http://ms-books-catalogue/books/" + bookId;
+        // Usamos el NOMBRE del microservicio registrado en Eureka
+        // String url = "http://ms-books-catalogue/books/" + bookId;
+        String url = "http://localhost:8088/books/" + bookId;
         
         try {
             BookDTO book = restTemplate.getForObject(url, BookDTO.class);
 
-            // Validación: Que el libro exista, tenga stock y no esté oculto [cite: 115, 118]
+            // Validación: Que el libro exista, tenga stock y no esté oculto
             if (book != null && book.getStock() > 0 && book.getVisible()) {
                 Purchase purchase = new Purchase();
                 purchase.setBookId(bookId);
                 purchase.setPurchaseDate(LocalDateTime.now());
                 
-                // Persistencia en base de datos relacional [cite: 119]
+                // Persistencia en base de datos relacional
                 return ResponseEntity.ok(repository.save(purchase));
             }
         } catch (Exception e) {
