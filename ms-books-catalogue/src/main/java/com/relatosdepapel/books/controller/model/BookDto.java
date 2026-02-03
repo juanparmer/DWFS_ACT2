@@ -20,5 +20,6 @@ public class BookDto {
     private String isbn;
     private Integer rating;
     private Boolean visible;
+    private Integer stock;
 
 }

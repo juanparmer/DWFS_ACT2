@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class BookDTO {
     private Long id;
-    private Integer stock;
-    private Boolean visible;
+    private Integer stock;    // Importante para la validación
+    private Boolean visible;  // Importante para la validación
 }

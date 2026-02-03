@@ -11,4 +11,5 @@ public final class Consts {
     public static final String ISBN = "isbn";
     public static final String RATING = "rating";
     public static final String VISIBLE = "visible";
+    public static final String STOCK = "stock";
 }

@@ -45,6 +45,9 @@ public class Book {
     @Column(name = Consts.RATING)
     private Integer rating;
 
+    @Column(name = Consts.STOCK)
+    private Integer stock;
+
     @Column(name= Consts.VISIBLE, nullable = false)
     private Boolean visible = true;
 

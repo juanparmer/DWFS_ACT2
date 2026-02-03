@@ -3,9 +3,9 @@ server:
 
 spring:
   application:
-    name: ms-books-payments # Nombre para Eureka [cite: 122]
+    name: ms-books-payments # Nombre para Eureka
   datasource:
-    url: jdbc:h2:mem:paymentsdb # BD Relacional propia [cite: 119, 129]
+    url: jdbc:h2:mem:paymentsdb # BD Relacional propia
     driverClassName: org.h2.Driver
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
