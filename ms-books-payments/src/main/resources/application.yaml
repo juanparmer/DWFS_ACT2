@@ -1,0 +1,18 @@
+server:
+  port: 8082 # Un puerto diferente al buscador
+
+spring:
+  application:
+    name: ms-books-payments # Nombre para Eureka [cite: 122]
+  datasource:
+    url: jdbc:h2:mem:paymentsdb # BD Relacional propia [cite: 119, 129]
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # URL de tu servidor Eureka [cite: 122]

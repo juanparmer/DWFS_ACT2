@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6",
+		"name": "Relatos de Papel - Operador",
+		"description": "Pruebas para el microservicio ms-books-payments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Compra Exitosa (Libro con Stock)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "1",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"payments"
+					]
+				},
+				"description": "Prueba donde el libro ID 1 tiene stock y es visible en el buscador."
+			},
+			"response": []
+		},
+		{
+			"name": "2. Error - Sin Stock",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "2",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"payments"
+					]
+				},
+				"description": "Prueba donde el libro ID 2 tiene stock 0."
+			},
+			"response": []
+		},
+		{
+			"name": "3. Error - Libro Oculto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "3",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/payments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"payments"
+					]
+				},
+				"description": "Prueba donde el libro ID 3 tiene visible=false."
+			},
+			"response": []
+		}
+	]
+}
